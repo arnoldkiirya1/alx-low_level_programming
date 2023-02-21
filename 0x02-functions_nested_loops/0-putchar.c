@@ -1,3 +1,8 @@
+/*
+ * File: 0-putchar.c
+ * Auth: Kiirya Arnold
+ *
+ */
 #include "main.h"
 
 /**
