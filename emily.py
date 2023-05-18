@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/bin/bash
 
 def print_birthday_message(name):
     message = f"Happy Birthday to {name}!"
