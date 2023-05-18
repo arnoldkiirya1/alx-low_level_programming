@@ -12,15 +12,13 @@
 
 int sum_dlistint(dlistint_t *head)
 {
-    int sum = 0;
-    
-    dlistint_t *current = head;
+	int sum = 0;
 
-    while (current != NULL)
-    {
-        sum += current->n;
-        current = current->next;
-    }
-
-    return sum;
+	/* while we have a pointer to the list */
+	while (head != NULL)
+	{
+		sum += head->n;
+		head = head->next;
+	}
+	return (sum);
 }
