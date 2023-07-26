@@ -1,0 +1,11 @@
+# Makefile for school executable
+
+# Compiler to be used
+CC = gcc
+
+# Source files
+SRC = main.c school.c
+
+# Rule to build the executable 'school'
+all: $(SRC)
+	$(CC) $(SRC) -o school
