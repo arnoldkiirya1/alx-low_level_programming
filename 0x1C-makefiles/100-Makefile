@@ -1,0 +1,39 @@
+# Makefile for building 'school' executable
+
+# Compiler to be used (gcc)
+CC = gcc
+
+# Source files - list of .c files to be compiled
+SRC = main.c school.c
+
+# Object files derived from source files by replacing '.c' with '.o'
+OBJ = $(SRC:.c=.o)
+
+# Name of the executable to be generated
+NAME = school
+
+# Compiler flags (options) to be used during compilation
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# PHONY targets - these targets don't represent actual files
+# They are used to avoid conflicts with file names
+.PHONY: all clean oclean fclean re
+
+# Rule to build the 'school' executable using the object files
+# The target 'all' depends on 'm.h' and $(OBJ) (object files)
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Rule to clean up generated files and temporary files
+clean:
+	$(RM) *~ $(NAME)
+
+# Rule to clean up only object files
+oclean:
+	$(RM) $(OBJ)
+
+# Rule to clean up all generated files and object files
+fclean: clean oclean
+
+# Rule to rebuild the entire project from scratch
+re: fclean all
